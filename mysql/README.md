@@ -440,26 +440,5 @@ systemctl start keepalived
 
 
 
-```
-> /home/mysql2/conf/mysql/my.cnf 
-#============
-tee /home/mysql2/conf/mysql/mysql.cnf <<-'EOF'
-[client]
-default-character-set=utf8mb4
-[mysql]
-default-character-set=utf8mb4
-[mysqld]
-character-set-server=utf8mb4 
-collation-server=utf8mb4_general_ci
-sql_mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
-!includedir /etc/mysql/conf.d/
-!includedir /etc/mysql/mysql.conf.d/
-EOF
 
-#docker restart mysql5.7_master
-docker restart mysql5.7_slave
-
-
-cat /home/mysql2/conf/mysql/mysql.conf.d/mysqld.cnf
-```
 
